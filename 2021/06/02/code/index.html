@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="zh_CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>命令行的使用 | 大牛的学习笔记</title><meta name="keywords" content="技术支持"><meta name="author" content="Newton"><meta name="copyright" content="Newton"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="命令行的使用Shell在计算机科学中，Shell俗称壳（用来区别于核），是指“为使用者提供操作界面”的软件。 一：图形界面shell （Graphical User Interface shell 即 GUI shell） 二：命令行式shell （Command Line Interface shell ，即CLI shell） 命令行界面（Command Line Interface，简写：C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="命令行的使用">
+<meta property="og:url" content="http://example.com/2021/06/02/code/index.html">
+<meta property="og:site_name" content="大牛的学习笔记">
+<meta property="og:description" content="命令行的使用Shell在计算机科学中，Shell俗称壳（用来区别于核），是指“为使用者提供操作界面”的软件。 一：图形界面shell （Graphical User Interface shell 即 GUI shell） 二：命令行式shell （Command Line Interface shell ，即CLI shell） 命令行界面（Command Line Interface，简写：C">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&fm=26&gp=0.jpg">
+<meta property="article:published_time" content="2021-06-02T01:09:22.000Z">
+<meta property="article:modified_time" content="2021-06-02T01:22:12.970Z">
+<meta property="article:author" content="Newton">
+<meta property="article:tag" content="技术支持">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&fm=26&gp=0.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/06/02/code/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '命令行的使用',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-06-02 09:22:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&amp;fm=26&amp;gp=0.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">大牛的学习笔记</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">命令行的使用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-06-02T01:09:22.000Z" title="Created 2021-06-02 09:09:22">2021-06-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-06-02T01:22:12.970Z" title="Updated 2021-06-02 09:22:12">2021-06-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="命令行的使用"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="命令行的使用"><a href="#命令行的使用" class="headerlink" title="命令行的使用"></a>命令行的使用</h1><h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><p>在计算机科学中，Shell俗称壳（用来区别于核），是指“为使用者提供操作界面”的软件。</p>
+<p><strong>一：图形界面shell</strong></p>
+<p>（Graphical User Interface shell 即 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/GUI/479966">GUI</a> shell）</p>
+<p><strong>二：命令行式shell</strong></p>
+<p>（Command Line Interface shell ，即CLI shell）</p>
+<p><strong>命令行界面（Command Line Interface，简写：CLI）</strong></p>
+<p><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc43b0c85-3350-48e9-a188-afdd8bb34cdf%2F2021-05-31_9.19.04.png?table=block&id=c73250bf-53ff-4b95-a409-d3d63deeb7c0&spaceId=c16b006a-1a53-488e-af6d-4dca82a5b381&width=5700&userId=&cache=v2" alt="img"></p>
+<ul>
+<li>为什么电影里的黑客从来不用鼠标？</li>
+</ul>
+<h3 id="命令行的优势"><a href="#命令行的优势" class="headerlink" title="命令行的优势"></a>命令行的优势</h3><ul>
+<li>开发成本低</li>
+<li>效率高</li>
+<li>自动化</li>
+</ul>
+<h2 id="常见的命令行"><a href="#常见的命令行" class="headerlink" title="常见的命令行"></a>常见的命令行</h2><h3 id="Mac-Linux"><a href="#Mac-Linux" class="headerlink" title="Mac | Linux"></a>Mac | Linux</h3><ul>
+<li>Bash</li>
+</ul>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><ul>
+<li>CMD</li>
+<li>Powershell</li>
+<li>Git Bash</li>
+</ul>
+<h2 id="Bash-常用命令"><a href="#Bash-常用命令" class="headerlink" title="Bash 常用命令"></a>Bash 常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">ls <span class="comment"># 列出当前文件夹的文件</span></span><br><span class="line">ls -a <span class="comment"># 包括隐藏文件</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="comment"># 输出字符串</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">pwd</span> <span class="comment"># 输出当前完整路径</span></span><br><span class="line"><span class="built_in">cd</span> [目录名]<span class="comment"># change directory 切换路径</span></span><br><span class="line"><span class="built_in">cd</span> .. <span class="comment"># 返回上一级目录</span></span><br><span class="line"><span class="built_in">cd</span> ～ <span class="comment"># ～表示当前用户home路径</span></span><br><span class="line"></span><br><span class="line">mkdir [目录名] <span class="comment"># make directory 创建文件夹</span></span><br><span class="line">rmdir [目录名] <span class="comment"># remove directory 移除文件夹</span></span><br><span class="line"></span><br><span class="line">touch [文件名] <span class="comment"># 新建文件</span></span><br><span class="line">cp [源文件名] [目标文件名] <span class="comment"># 复制文件</span></span><br><span class="line">cp [源文件名] [目录名]\\ <span class="comment"># 复制文件到文件夹</span></span><br><span class="line"></span><br><span class="line">rm [文件名] <span class="comment"># 删除文件｜ -r 递归删除目录下所有文件｜-f 强制删除</span></span><br><span class="line"></span><br><span class="line">cat [文件名] <span class="comment"># 显示文件</span></span><br><span class="line"></span><br><span class="line">head -n 5 [文件名] <span class="comment"># 显示文件头五行</span></span><br><span class="line">tail -n 5 [文件名] <span class="comment"># 显示文件后五行</span></span><br><span class="line"></span><br><span class="line">grep <span class="string">&#x27;a&#x27;</span> [文件名] <span class="comment"># 全文搜索</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># &gt; 可以将上一个命令的输出连接到下一个命令的输入（重定向）</span></span><br><span class="line"></span><br><span class="line">cat file1.txt &gt; file2.txt </span><br><span class="line">cat file1.txt file2.txt &gt; combine.txt</span><br><span class="line"><span class="built_in">echo</span> hello &gt; hello.txt</span><br><span class="line">ls /etc &gt; files.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将文本追加到文件</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;this is a new line&quot;</span> &gt;&gt; file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 与-e选项一起使用时， echo 命令解释反斜杠转义的字符，例如换行符\\n：</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;this is a new line \\nthis is another new line&quot;</span> &gt;&gt; file.txt</span><br><span class="line">Copy</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果要生成更复杂的输出，请使用printf命令，该命令可用于指定输出的格式：</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;Hello, I&#x27;m %s.\\n&quot;</span> <span class="variable">$USER</span> &gt;&gt; file.txt</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="Windows-Terminal｜强大美观的命令行工具"><a href="#Windows-Terminal｜强大美观的命令行工具" class="headerlink" title="Windows Terminal｜强大美观的命令行工具"></a>Windows Terminal｜强大美观的命令行工具</h3><p><a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/p/windows-terminal/9n0dx20hk701?rtc=1&amp;activetab=pivot:overviewtab">https://www.microsoft.com/zh-cn/p/windows-terminal/9n0dx20hk701?rtc=1&amp;activetab=pivot:overviewtab</a></p>
+<p>winget｜官方软件包管理工具</p>
+<p><a target="_blank" rel="noopener" href="https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&amp;rtc=1&amp;activetab=pivot:overviewtab">https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&amp;rtc=1&amp;activetab=pivot:overviewtab</a></p>
+<p><a target="_blank" rel="noopener" href="https://yuze.blob.core.chinacloudapi.cn/test/Microsoft.DesktopAppInstaller.appxbundle">https://yuze.blob.core.chinacloudapi.cn/test/Microsoft.DesktopAppInstaller.appxbundle</a></p>
+<h3 id="Scoop｜-包管理工具"><a href="#Scoop｜-包管理工具" class="headerlink" title="Scoop｜ 包管理工具"></a>Scoop｜ 包管理工具</h3><p><a target="_blank" rel="noopener" href="https://yuze.blob.core.chinacloudapi.cn/test/scoop.ps1">https://yuze.blob.core.chinacloudapi.cn/test/scoop.ps1</a></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装scoop</span></span><br><span class="line"><span class="built_in">iwr</span> <span class="literal">-useb</span> [<span class="type">get.scoop.sh</span>](&lt;http://get.scoop.sh/&gt;) | <span class="built_in">iex</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="built_in">Invoke-Expression</span> (<span class="built_in">New-Object</span> System.Net.WebClient).DownloadString(<span class="string">&#x27;&lt;https://get.scoop.sh&gt;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用aria2加速下载</span></span><br><span class="line"></span><br><span class="line">scoop install aria2</span><br><span class="line"></span><br><span class="line">scoop config aria2<span class="literal">-max</span><span class="literal">-connection</span><span class="literal">-per</span><span class="literal">-server</span> <span class="number">16</span></span><br><span class="line">scoop config aria2<span class="operator">-split</span> <span class="number">16</span></span><br><span class="line">scoop config aria2<span class="literal">-min</span><span class="operator">-split</span><span class="literal">-size</span> <span class="number">1</span>M</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 卸载软件</span></span><br><span class="line">scoop uninstall <span class="number">7</span>zip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新scoop及软件</span></span><br><span class="line">scoop update <span class="comment">#更新scoop</span></span><br><span class="line">scoop update <span class="number">7</span>zip <span class="comment">#更新7zip</span></span><br><span class="line">scoop * <span class="comment">#更新全部</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加仓库scoop自带的main bucket软件过少，我们需要添加官方维护的extras bucket：</span></span><br><span class="line">scoop bucket add extras</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="annie｜视频下载"><a href="#annie｜视频下载" class="headerlink" title="annie｜视频下载"></a>annie｜视频下载</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install annie</span><br></pre></td></tr></table></figure>
+
+<p>直接下载链接</p>
+<p><a target="_blank" rel="noopener" href="https://cowtransfer.com/s/5271801e0d9a46">https://cowtransfer.com/s/5271801e0d9a46</a></p>
+<h2 id="transfer-sh-｜传输文件"><a href="#transfer-sh-｜传输文件" class="headerlink" title="transfer.sh ｜传输文件"></a><a target="_blank" rel="noopener" href="http://transfer.sh/">transfer.sh</a> ｜传输文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --upload-file ./hello.txt &lt;http://transfer.sh/hello.txt&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="几个好用的CMD命令"><a href="#几个好用的CMD命令" class="headerlink" title="几个好用的CMD命令"></a>几个好用的CMD命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">shutdown -s -t 3600 <span class="comment"># 定时关机，一小时</span></span><br><span class="line"></span><br><span class="line">shutdown -a <span class="comment"># 取消定时关机</span></span><br><span class="line"></span><br><span class="line">ipconfig /all <span class="comment"># 查看本机IP</span></span><br><span class="line"></span><br><span class="line">netsh winsock reset <span class="comment"># 重置网络</span></span><br><span class="line"></span><br><span class="line">sfc /SCANNOW <span class="comment"># 系统修复</span></span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Newton</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/06/02/code/">http://example.com/2021/06/02/code/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%8A%80%E6%9C%AF%E6%94%AF%E6%8C%81/">技术支持</a></div><div class="post_share"><div class="social-share" data-image="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&amp;fm=26&amp;gp=0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/06/01/%E8%AE%A4%E8%AF%86%E8%80%B6%E5%92%8C%E5%8D%8E%E6%98%AF%E6%99%BA%E6%85%A7%E7%9A%84%E5%BC%80%E7%AB%AF/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">神爱世人</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Newton</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">命令行的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell"><span class="toc-number">2.</span> <span class="toc-text">Shell</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">2.0.1.</span> <span class="toc-text">命令行的优势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">2.1.</span> <span class="toc-text">常见的命令行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mac-Linux"><span class="toc-number">2.1.1.</span> <span class="toc-text">Mac | Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows"><span class="toc-number">2.1.2.</span> <span class="toc-text">Windows</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bash-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.2.</span> <span class="toc-text">Bash 常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-number">2.3.</span> <span class="toc-text">应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows-Terminal%EF%BD%9C%E5%BC%BA%E5%A4%A7%E7%BE%8E%E8%A7%82%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7"><span class="toc-number">2.3.1.</span> <span class="toc-text">Windows Terminal｜强大美观的命令行工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scoop%EF%BD%9C-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="toc-number">2.3.2.</span> <span class="toc-text">Scoop｜ 包管理工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#annie%EF%BD%9C%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.4.</span> <span class="toc-text">annie｜视频下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transfer-sh-%EF%BD%9C%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6"><span class="toc-number">2.5.</span> <span class="toc-text">transfer.sh ｜传输文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84CMD%E5%91%BD%E4%BB%A4"><span class="toc-number">2.6.</span> <span class="toc-text">几个好用的CMD命令</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/06/02/code/" title="命令行的使用"><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="命令行的使用"/></a><div class="content"><a class="title" href="/2021/06/02/code/" title="命令行的使用">命令行的使用</a><time datetime="2021-06-02T01:09:22.000Z" title="Created 2021-06-02 09:09:22">2021-06-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/01/%E8%AE%A4%E8%AF%86%E8%80%B6%E5%92%8C%E5%8D%8E%E6%98%AF%E6%99%BA%E6%85%A7%E7%9A%84%E5%BC%80%E7%AB%AF/" title="神爱世人"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神爱世人"/></a><div class="content"><a class="title" href="/2021/06/01/%E8%AE%A4%E8%AF%86%E8%80%B6%E5%92%8C%E5%8D%8E%E6%98%AF%E6%99%BA%E6%85%A7%E7%9A%84%E5%BC%80%E7%AB%AF/" title="神爱世人">神爱世人</a><time datetime="2021-06-01T14:59:36.000Z" title="Created 2021-06-01 22:59:36">2021-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/30/test/" title="博客完成，测试文件"><img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客完成，测试文件"/></a><div class="content"><a class="title" href="/2021/05/30/test/" title="博客完成，测试文件">博客完成，测试文件</a><time datetime="2021-05-30T09:57:46.000Z" title="Created 2021-05-30 17:57:46">2021-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/30/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2021/05/30/hello-world/" title="Hello World">Hello World</a><time datetime="2021-05-30T09:33:33.689Z" title="Created 2021-05-30 17:33:33">2021-05-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Newton</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
